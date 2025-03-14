@@ -73,7 +73,7 @@ This guide provides a comprehensive approach to setting up a professional-grade 
         SELECT
             country_code,
             COUNT(CASE WHEN LOWER(sig_class) = 'low' THEN 1 END) AS low_count,
-            COUNT(CASE WHEN LOWER(sig_class) IN ('medium', 'moderate') THEN 1 END) AS medium_count,
+            COUNT(CASE WHEN LOWER(sig_class) = 'moderate' THEN 1 END) AS moderate_count,
             COUNT(CASE WHEN LOWER(sig_class) = 'high' THEN 1 END) AS high_count
         FROM
             OPENROWSET(
