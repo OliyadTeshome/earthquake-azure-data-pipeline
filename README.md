@@ -43,12 +43,6 @@ The architecture includes:
 * **Azure Synapse Analytics:** Used for querying and analyzing the Gold layer data for reporting.
 * **Visualization (Fabric, Power BI, Tableau):** Tools used for creating interactive dashboards and reports.
 
-**Explanation of Tiers (Bronze, Silver, Gold)**
-
-* **Bronze:** Raw data ingested directly from the USGS API, stored as is in Parquet format.
-* **Silver:** Cleaned and standardized data, with basic transformations applied, removing duplicates and handling missing values.
-* **Gold:** Aggregated and enriched data, optimized for reporting and analysis, tailored to specific business needs, such as adding country codes.
-
 ## Data Modeling
 
 We implement a medallion architecture to structure and organize data effectively:
