@@ -67,82 +67,33 @@ We implement a medallion architecture to structure and organize data effectively
 
 This guide provides a comprehensive approach to setting up a professional-grade Azure Databricks and Synapse workflow for data engineering.
 
-**Step 1: Create an Azure Account**
+**Step 1: Create a Resource Group**
 
-* Sign up for an Azure account if you do not already have one.
+**Step 2: Set Up a Storage Account**
 
-**Step 2: Create a Databricks Resource**
-
-* Create a Databricks resource in Azure.
-* Select the `Standard LTS (Long Term Support)` tier. Avoid using ML or other specialized tiers.
-
-**Step 3: Set Up a Storage Account**
-
-* Create a Storage Account and enable `hierarchical namespaces` in the advanced settings.
-* Navigate to the Storage Account resource: Go to `Data Storage > Containers > + Containers`.
-* Create three containers: `bronze`, `silver`, and `gold`.
-* Configure access: Go to `IAM > Add role assignment > Storage Blob Data Contributor`.
-* Click `Next > Managed Identity > Select Members`.
-* Select `Access Connector for Azure Databricks` as the managed identity.
-* Click `Review + Assign`.
+**Step 3: Create a Databricks Resource**
 
 **Step 4: Configure Databricks**
 
-* Open the Databricks resource and click `Launch Workspace`.
-* Start a compute instance (this may take a few minutes).
-* Set up external data access: Go to `Catalog > External Data > Credentials > Create Credential`.
-* For the `Access Connector ID`, use the Resource ID of the Access Connector: Search for `Access Connector`, copy the Resource ID, and paste it here.
-* Use this section to grant permissions or delete credentials as needed.
-* Define external locations: Navigate to `External Data > External Locations`.
-* Assign a name, select the storage credential, and specify the URL (use the container name and storage account name for `bronze`, `silver`, and `gold`).
-* For detailed steps, refer to this helpful video: [Pathfinder Analytics](link_to_video). (Replace `link_to_video` with the actual link).
-
 **Step 5: Create and Execute Notebooks**
 
-* In the Databricks workspace, create a notebook for each layer (bronze, silver, gold).
-* Add the relevant code for `bronze` from GitHub.
-* Execute the notebook and refresh the Storage Account containers to verify updates.
-* Repeat the process for `silver` and `gold` notebooks, adding the corresponding code.
+* Bronze Notebook
+* Silver Notebook
+* Gold Notebook
 
 **Step 6: Install Required Libraries**
 
 * Before running the `gold` notebook, install the `reverse_geocoder` library.
-* Navigate to `Compute > Cluster > Libraries > + Install New Library`.
-* Select `Source: PyPI` and enter `reverse_geocoder`.
-* Wait a few minutes for the installation to complete.
-* Use cluster-level libraries for consistency and shared environments across notebooks.
 
 **Step 7: Optimize Gold Notebook Execution**
 
-* During execution, you may encounter performance bottlenecks with the `reverse_geocoder` Python UDF due to its non-thread-safe nature in distributed setups.
-* Replace the UDF with alternatives like:
-    * Precomputed lookup tables.
-    * Pandas UDFs for vectorized execution.
-    * Batch processing geocoding outside Spark.
-
 **Step 8: Set Up Azure Data Factory (ADF)**
-
-* Create a new Azure Data Factory instance (in a new Resource Group if needed).
-* Launch the ADF studio and create a pipeline: Drag the `Notebook` activity into the pipeline and configure it to run Databricks notebooks.
-* Add a `Databricks Linked Service`: Use the `AutoResolveIntegrationRuntime`.
-* Authenticate with an Access Token (recommended to store the token in a Key Vault for security).
-* Pass parameters to the pipeline: For example, add parameters `start_date` and `end_date` with dynamic values using `@formatDateTime` expressions.
-* Chain notebooks (bronze, silver, gold) to create a pipeline with success dependencies.
-* Validate, publish, and run the pipeline.
-* Schedule the pipeline to run at desired intervals (e.g., daily).
-
-# Integrating Azure Synapse Analytics and Visualization Options
-
-This document outlines the steps to integrate Azure Synapse Analytics with your data pipeline and provides guidance on visualization options.
 
 ## Step 9: Integrate Azure Synapse Analytics
 
 1.  **Create a Synapse Workspace:**
-    * Link it to the existing Storage Account where your data is stored.
-2.  **Configure a File System and Permissions:**
-    * Ensure Synapse has the necessary permissions to access your data in ADLS Gen2.
-3.  **Query Data Using Serverless SQL:**
-    * Use `OPENROWSET` to query Parquet files stored in your `bronze`, `silver`, and `gold` containers.
+3.  **Configure a File System and Permissions:**
+4.  **Query Data Using Serverless SQL:**
     * **Example Query:**
         ```sql
         SELECT
@@ -158,18 +109,14 @@ This document outlines the steps to integrate Azure Synapse Analytics with your 
         GROUP BY
             country_code;
         ```
-        * **Note:** Replace `<storage_account>` with the actual name of your storage account.
-4.  **Create External Tables for Structured Access:**
-    * Define external tables linked to the `gold` container for better organization and performance.
-5.  **Optimize Performance:**
-    * Use indexing, partitioning, and caching as required to improve query performance.
-
+5.  **Create External Tables for Structured Access:**
+6.  **Optimize Performance:**
+   
 ## Step 10: Visualization Options
 
 * **Synapse SQL for Analytics:**
-    * While Power BI can be used, Synapse SQL is a powerful alternative for analytics and queries, especially for Mac users.
+   
 * **Data Export:**
-    * Export data from Synapse for further visualization or reporting if needed.
 
 ## Key Considerations
 
@@ -179,5 +126,3 @@ This document outlines the steps to integrate Azure Synapse Analytics with your 
     * Utilize Synapse for querying large datasets efficiently.
 * **Data Engineering Focus:**
     * Maintain an emphasis on structured pipelines and optimized workflows.
-
-This guide provides a comprehensive approach to setting up a professional-grade Azure Databricks and Synapse workflow for data engineering.
