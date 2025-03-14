@@ -4,13 +4,7 @@ This repository contains the code and documentation for an Azure Data Pipeline d
 
 ## Overview
 
-This pipeline ingests raw earthquake data, transforms it into a usable format using a medallion architecture (Bronze, Silver, Gold), and stores it in Azure Data Lake Storage Gen2 (ADLS Gen2) for analysis. The pipeline leverages various Azure services to achieve this, including:
-
-* **Azure Data Factory (ADF):** Orchestrates the entire pipeline, including data ingestion and workflow management.
-* **Azure Data Lake Storage Gen2 (ADLS Gen2):** Stores raw and processed earthquake data at different stages.
-* **Azure Databricks:** Performs complex data transformations and processing.
-* **Azure Synapse Analytics:** Enables querying and aggregating data for reporting and analysis.
-* **Power BI:** Used for data visualization and creating interactive dashboards.
+This pipeline ingests raw earthquake data, transforms it into a usable format using a medallion architecture (Bronze, Silver, Gold), and stores it in Azure Data Lake Storage Gen2 (ADLS Gen2) for analysis.
 
 ## Architecture
 
