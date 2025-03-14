@@ -28,7 +28,8 @@ The architecture includes:
 
 **Visual Architecture Diagram**
 
-![Earthquake Data Pipeline Architecture](your_image_filename.png "Earthquake Data Pipeline Architecture")
+![image](https://github.com/user-attachments/assets/243f8d0a-942d-4a3d-948f-baca656b3602)
+
 
 **Explanation of Components**
 
