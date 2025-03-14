@@ -1,0 +1,9 @@
+{
+	"name": "prj1-DFactory",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b6a945d4-9e48-4629-9415-3fa21408d698",
+		"tenantId": "8ae4348b-d4f7-42ee-8f8c-8270b2b78b9a"
+	}
+}
