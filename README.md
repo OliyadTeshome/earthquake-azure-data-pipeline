@@ -112,10 +112,6 @@ Contributions are welcome! Please follow these steps:
 4.  Push your branch to your fork.
 5.  Submit a pull request.
 
-## License
-
-[Your License]
-
 ## Future Enhancements
 
 * Implement real-time data ingestion using Azure Event Hubs.
