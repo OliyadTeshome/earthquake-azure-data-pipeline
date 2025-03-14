@@ -14,8 +14,6 @@ This pipeline ingests raw earthquake data, transforms it into a usable format us
 
 ## Architecture
 
-**Architecture Overview**
-
 ![image](https://github.com/user-attachments/assets/243f8d0a-942d-4a3d-948f-baca656b3602)
 
 
@@ -69,19 +67,13 @@ This guide provides a comprehensive approach to setting up a professional-grade 
 * Silver Notebook
 * Gold Notebook
 
-**Step 6: Install Required Libraries**
+**Step 7: Set Up Azure Data Factory (ADF)**
 
-* Before running the `gold` notebook, install the `reverse_geocoder` library.
+**Step 9: Integrate Azure Synapse Analytics**
 
-**Step 7: Optimize Gold Notebook Execution**
-
-**Step 8: Set Up Azure Data Factory (ADF)**
-
-## Step 9: Integrate Azure Synapse Analytics
-
-1.  **Create a Synapse Workspace:**
-3.  **Configure a File System and Permissions:**
-4.  **Query Data Using Serverless SQL:**
+1.  Create a Synapse Workspace
+3.  Configure a File System and Permissions
+4.  Query Data Using Serverless SQL
     * **Example Query:**
         ```sql
         SELECT
@@ -97,14 +89,14 @@ This guide provides a comprehensive approach to setting up a professional-grade 
         GROUP BY
             country_code;
         ```
-5.  **Create External Tables for Structured Access:**
-6.  **Optimize Performance:**
+5.  Create External Tables for Structured Access
+6.  Optimize Performance
    
-## Step 10: Visualization Options
+**Step 10: Visualization Options**
 
-* **Synapse SQL for Analytics:**
+* Synapse SQL for Analytics
    
-* **Data Export:**
+* Data Export
 
 ## Key Considerations
 
