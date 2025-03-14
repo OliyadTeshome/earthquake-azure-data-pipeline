@@ -2,7 +2,7 @@
 	"name": "SQL script 1",
 	"properties": {
 		"content": {
-			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://prj1storage.dfs.core.windows.net/gold/earthquake_events_gold/**',\n        FORMAT = 'PARQUET'\n    ) AS [result]\n",
+			"query": "-- This is auto-generated code\nSELECT\n    TOP 100\n    country_code,\n    COUNT(CASE WHEN LOWER(sig_class) = 'low' THEN 1 END) AS low_count,\n    COUNT(CASE WHEN LOWER(sig_class) = 'moderate' THEN 1 END) AS moderate_count,\n    COUNT(CASE WHEN LOWER(sig_class) = 'high' THEN 1 END) AS high_count\nFROM\n    OPENROWSET(\n        BULK 'https://prj1storage.dfs.core.windows.net/gold/earthquake_events_gold/**',\n        FORMAT = 'PARQUET'\n    ) AS [result]\nGROUP BY country_code;",
 			"metadata": {
 				"language": "sql"
 			},
