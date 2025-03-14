@@ -21,7 +21,7 @@ This pipeline ingests raw earthquake data, transforms it into a usable format us
     * **Gold (1):** Aggregated and enriched data.
 * **Azure Databricks:** Performs data transformation and processing, moving data from Bronze to Silver to Gold layers.
 * **Azure Synapse Analytics:** Used for querying and analyzing the Gold layer data for reporting.
-* **Visualization (Fabric, Power BI, Tableau):** Tools used for creating interactive dashboards and reports.
+* **Visualization (Power BI):** Tool used for creating interactive dashboards and reports.
 
 ## Data Modeling
 
