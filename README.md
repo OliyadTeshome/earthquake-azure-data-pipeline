@@ -18,16 +18,6 @@ This pipeline ingests raw earthquake data, transforms it into a usable format us
 
 This pipeline follows a modular architecture, integrating Azure's powerful data engineering tools to ensure scalability, reliability, and efficiency.
 
-The architecture includes:
-
-1.  **Data Ingestion:** Azure Data Factory orchestrates the daily ingestion of earthquake data from the USGS Earthquake API.
-2.  **Data Processing:** Databricks processes raw data into structured formats (bronze, silver, gold tiers).
-3.  **Data Storage:** Azure Data Lake Storage serves as the backbone for storing and managing data at different stages.
-4.  **Data Analysis:** Synapse Analytics enables querying and aggregating data for reporting.
-5.  **Optional Visualization:** Power BI, Fabric or Tableau can be used to create interactive dashboards for stakeholders.
-
-**Visual Architecture Diagram**
-
 ![image](https://github.com/user-attachments/assets/243f8d0a-942d-4a3d-948f-baca656b3602)
 
 
