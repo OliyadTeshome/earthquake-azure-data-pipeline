@@ -10,7 +10,7 @@ This pipeline ingests raw earthquake data, transforms it into a usable format us
 * **Azure Data Lake Storage Gen2 (ADLS Gen2):** Stores raw and processed earthquake data at different stages.
 * **Azure Databricks:** Performs complex data transformations and processing.
 * **Azure Synapse Analytics:** Enables querying and aggregating data for reporting and analysis.
-* **Power BI/Fabric/Tableau (Optional):** Used for data visualization and creating interactive dashboards.
+* **Power BI:** Used for data visualization and creating interactive dashboards.
 
 ## Architecture
 
