@@ -16,8 +16,6 @@ This pipeline ingests raw earthquake data, transforms it into a usable format us
 
 **Architecture Overview**
 
-This pipeline follows a modular architecture, integrating Azure's powerful data engineering tools to ensure scalability, reliability, and efficiency.
-
 ![image](https://github.com/user-attachments/assets/243f8d0a-942d-4a3d-948f-baca656b3602)
 
 
