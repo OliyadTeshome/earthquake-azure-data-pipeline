@@ -25,7 +25,7 @@ This pipeline ingests raw earthquake data, transforms it into a usable format us
 
 ## Data Modeling
 
-We implement a medallion architecture to structure and organize data effectively:
+Implementing a medallion architecture to structure and organize data effectively:
 
 1.  **Bronze Layer:** Raw data ingested directly from the API, stored in Parquet format for future reprocessing if needed.
 2.  **Silver Layer:** Cleaned and normalized data, removing duplicates and handling missing values, ensuring it's ready for analytics.
