@@ -69,17 +69,6 @@ We implement a medallion architecture to structure and organize data effectively
 * **Scalability:** Handles large volumes of data seamlessly using Azure services.
 * **Actionable Insights:** Provides stakeholders with ready-to-use data for informed decision-making.
 
-## Prerequisites
-
-* An active Azure subscription.
-* Azure CLI or Azure PowerShell installed.
-* An Azure Resource Group.
-* Azure Data Factory instance.
-* Azure Data Lake Storage Gen2 account.
-* Azure Databricks workspace.
-* Azure Synapse Analytics workspace.
-* (Optional) Power BI/Fabric/Tableau account.
-
 ## Getting Started
 
 1.  **Clone the repository:**
