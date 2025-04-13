@@ -1,4 +1,4 @@
-# Earthquake Azure Data Pipeline
+# Earthquake Data Pipeline on Azure with Medallion Architecture
 
 This repository contains the code and documentation for an Azure Data Pipeline designed to process and analyze earthquake data from the USGS Earthquake API.
 
